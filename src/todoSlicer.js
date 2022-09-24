@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { act } from "react-dom/test-utils";
 import { v4 as uuidv4 } from "uuid";
 
 
@@ -39,10 +40,14 @@ const todoSlice = createSlice({
         const todo = state.todos.find((todo) => todo.id === action.payload);
         todo.done = !todo.done;
       },
+
+      clearTodo : (state) => {
+        state.todos = state.todos.filter(todo => todo.done !== true)
+      }
     },
 
 });
 
-export const { addTodoList, deleteTodo, onCheckbox } = todoSlice.actions;
+export const { addTodoList, deleteTodo, onCheckbox,clearTodo } = todoSlice.actions;
 
 export default todoSlice.reducer;

@@ -4,6 +4,7 @@ import TodoHeader from "./TodoHeader";
 import TodoItems from "./TodoItems";
 import { Provider } from "react-redux";
 import store from "./store";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <div className="App">
         <TodoHeader />
         <TodoItems />
+        <Footer/>
       </div>
     </Provider>
   );
