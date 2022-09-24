@@ -9,7 +9,7 @@ function TodoItems() {
   return (
     <section>
       {todos.map((todo) => (
-        <TodoItem key={todo.id} />
+        <TodoItem key={todo.id}  todo={todo}/>
       ))}
     </section>
   );

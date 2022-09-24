@@ -1,10 +1,11 @@
 import React from "react";
 import { deleteTodo, onCheckbox } from "./todoSlicer";
-import { useDispatch, useSelector } from "react-redux";
+import {useDispatch} from "react-redux";
 
-function TodoItem() {
-  const dispatch = useDispatch();
-  const todos = useSelector((state) => state.todo.todos);
+
+function TodoItem({todo}) {
+   const dispatch = useDispatch();
+ // const todos = useSelector((state) => state.todo.todos); 
 
   const onDeleteTodoList = (itemId) => {
     dispatch(deleteTodo(itemId));
@@ -18,11 +19,11 @@ function TodoItem() {
     <div className="div-wrapper">
       <input
         type="checkbox"
-        checked={todos.done}
-        onChange={() => onChangeChecked(todos.id)}
+        checked={todo.done}
+        onChange={() => onChangeChecked(todo.id)}
       />
-      <div>{todos.text}</div>
-      <button onClick={() => onDeleteTodoList(todos.id)}>X</button>
+      <div>{todo.text}</div>
+      <button onClick={() => onDeleteTodoList(todo.id)}>X</button>
     </div>
   );
 }

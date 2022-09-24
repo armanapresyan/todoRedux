@@ -24,6 +24,8 @@ const todoSlice = createSlice({
       },
     ],
 
+  },
+
     reducers: {
       addTodoList: (state, action) => {
         state.todos.push({ text: action.payload, id: uuidv4(), done: false });
@@ -38,7 +40,7 @@ const todoSlice = createSlice({
         todo.done = !todo.done;
       },
     },
-  },
+
 });
 
 export const { addTodoList, deleteTodo, onCheckbox } = todoSlice.actions;
