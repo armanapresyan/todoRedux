@@ -1,0 +1,12 @@
+.App{
+    width: 400px;
+}
+
+
+.div-wrapper{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid black;
+    margin: 5px;
+}
